@@ -1,0 +1,11 @@
+C:\Users\Admin\Desktop\programming_languages\finalProject\finalSnowmanProject\bin\Debug\finalSnowmanProject.exe.config
+C:\Users\Admin\Desktop\programming_languages\finalProject\finalSnowmanProject\bin\Debug\finalSnowmanProject.exe
+C:\Users\Admin\Desktop\programming_languages\finalProject\finalSnowmanProject\bin\Debug\finalSnowmanProject.pdb
+C:\Users\Admin\Desktop\programming_languages\finalProject\finalSnowmanProject\obj\Debug\finalSnowmanProject.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\programming_languages\finalProject\finalSnowmanProject\obj\Debug\finalSnowmanProject.csproj.SuggestedBindingRedirects.cache
+C:\Users\Admin\Desktop\programming_languages\finalProject\finalSnowmanProject\obj\Debug\finalSnowmanProject.Properties.Resources.resources
+C:\Users\Admin\Desktop\programming_languages\finalProject\finalSnowmanProject\obj\Debug\finalSnowmanProject.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\programming_languages\finalProject\finalSnowmanProject\obj\Debug\finalSnowmanProject.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\programming_languages\finalProject\finalSnowmanProject\obj\Debug\finalSnowmanProject.exe
+C:\Users\Admin\Desktop\programming_languages\finalProject\finalSnowmanProject\obj\Debug\finalSnowmanProject.pdb
+C:\Users\Admin\Desktop\programming_languages\finalProject\finalSnowmanProject\obj\Debug\finalSnowmanProject.Form1.resources
