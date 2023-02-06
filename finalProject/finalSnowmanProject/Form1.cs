@@ -19,7 +19,7 @@ namespace finalSnowmanProject
         private string randomWordChoice;
         private string wordToDisplay;
         private int numWrongGuesses;
-        private HashSet<char> prevGuesses = new HashSet<char>();
+        private SortedSet<char> prevGuesses = new SortedSet<char>();
         public Form1()
         {
             InitializeComponent();
@@ -55,7 +55,11 @@ namespace finalSnowmanProject
             {
                 MessageBox.Show("Adding " + guess + " to the set.");
                 prevGuesses.Add(guess);
-                listBox1.Items.Add(guess);
+                listBox1.Items.Clear(); // Item's aren't in sorted order so clear and then add each item back in sorted order
+                foreach (char c in prevGuesses) 
+                {
+                    listBox1.Items.Add(c);
+                }
             }
             bool correctGuess = false;
             char[] word = wordToDisplay.ToCharArray();
