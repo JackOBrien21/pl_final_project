@@ -50,11 +50,6 @@ namespace finalSnowmanProject
             hat.Visible = false;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         // game logic when "enter" button is clicked
         private void button1_Click_1(object sender, EventArgs e)
         {
@@ -143,21 +138,6 @@ namespace finalSnowmanProject
             {
                 rightArm.Visible = true;
             }
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
