@@ -24,7 +24,7 @@ namespace finalSnowmanProject
         {
             InitializeComponent();
 
-            words = File.ReadAllLines("dict.txt").ToList();
+            words = File.ReadAllLines("dictionary.txt").ToList();
             Random random = new Random();
             randomWordChoice = words[random.Next(0, words.Count)];
             wordToDisplay = new string('_', randomWordChoice.Length);
