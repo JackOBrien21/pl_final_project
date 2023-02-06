@@ -34,18 +34,18 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.bottomCircle = new System.Windows.Forms.PictureBox();
+            this.topCircle   = new System.Windows.Forms.PictureBox();
+            this.middleCircle = new System.Windows.Forms.PictureBox();
+            this.leftArm   = new System.Windows.Forms.PictureBox();
+            this.rightArm = new System.Windows.Forms.PictureBox();
+            this.hat = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.bottomCircle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.topCircle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.middleCircle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.leftArm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rightArm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hat)).BeginInit();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -95,77 +95,77 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(353, 183);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 104);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.bottomCircle.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.bottomCircle.Location = new System.Drawing.Point(353, 183);
+            this.bottomCircle.Margin = new System.Windows.Forms.Padding(0);
+            this.bottomCircle.Name = "pictureBox1";
+            this.bottomCircle.Size = new System.Drawing.Size(100, 104);
+            this.bottomCircle.TabIndex = 5;
+            this.bottomCircle.TabStop = false;
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(372, 63);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(59, 60);
-            this.pictureBox3.TabIndex = 6;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.topCircle.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.topCircle.Location = new System.Drawing.Point(372, 63);
+            this.topCircle.Margin = new System.Windows.Forms.Padding(0);
+            this.topCircle.Name = "pictureBox3";
+            this.topCircle.Size = new System.Drawing.Size(59, 60);
+            this.topCircle.TabIndex = 6;
+            this.topCircle.TabStop = false;
+            this.topCircle.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(366, 115);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(75, 77);
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
+            this.middleCircle.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.middleCircle.Location = new System.Drawing.Point(366, 115);
+            this.middleCircle.Margin = new System.Windows.Forms.Padding(0);
+            this.middleCircle.Name = "pictureBox2";
+            this.middleCircle.Size = new System.Drawing.Size(75, 77);
+            this.middleCircle.TabIndex = 7;
+            this.middleCircle.TabStop = false;
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(303, 78);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(73, 84);
-            this.pictureBox4.TabIndex = 8;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.leftArm.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.leftArm.Location = new System.Drawing.Point(303, 78);
+            this.leftArm.Margin = new System.Windows.Forms.Padding(0);
+            this.leftArm.Name = "pictureBox4";
+            this.leftArm.Size = new System.Drawing.Size(73, 84);
+            this.leftArm.TabIndex = 8;
+            this.leftArm.TabStop = false;
+            this.leftArm.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(437, 78);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(76, 82);
-            this.pictureBox5.TabIndex = 9;
-            this.pictureBox5.TabStop = false;
+            this.rightArm.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.rightArm.Location = new System.Drawing.Point(437, 78);
+            this.rightArm.Margin = new System.Windows.Forms.Padding(0);
+            this.rightArm.Name = "pictureBox5";
+            this.rightArm.Size = new System.Drawing.Size(76, 82);
+            this.rightArm.TabIndex = 9;
+            this.rightArm.TabStop = false;
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(366, 47);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(75, 35);
-            this.pictureBox6.TabIndex = 10;
-            this.pictureBox6.TabStop = false;
+            this.hat.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.hat.Location = new System.Drawing.Point(366, 47);
+            this.hat.Margin = new System.Windows.Forms.Padding(0);
+            this.hat.Name = "pictureBox6";
+            this.hat.Size = new System.Drawing.Size(75, 35);
+            this.hat.TabIndex = 10;
+            this.hat.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.hat);
+            this.Controls.Add(this.rightArm);
+            this.Controls.Add(this.leftArm);
+            this.Controls.Add(this.middleCircle);
+            this.Controls.Add(this.topCircle);
+            this.Controls.Add(this.bottomCircle);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
@@ -174,12 +174,12 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bottomCircle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.topCircle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.middleCircle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.leftArm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rightArm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hat)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,12 +192,12 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox bottomCircle;
+        private System.Windows.Forms.PictureBox middleCircle;
+        private System.Windows.Forms.PictureBox topCircle;
+        private System.Windows.Forms.PictureBox leftArm;
+        private System.Windows.Forms.PictureBox rightArm;
+        private System.Windows.Forms.PictureBox hat;
     }
 }
 

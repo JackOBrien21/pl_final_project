@@ -24,29 +24,46 @@ namespace finalSnowmanProject
         {
             InitializeComponent();
 
+            // .txt file should be line separated with one word on each line
+            // .ReadAllLines().toList() stores each line from the .txt
+            // into the class member List<String> words
             words = File.ReadAllLines("dictionary.txt").ToList();
+
+            // Picks a random word from words and sets that as the
+            // word the user needs to guess
             Random random = new Random();
             randomWordChoice = words[random.Next(0, words.Count)];
             wordToDisplay = new string('_', randomWordChoice.Length);
+
+           // various things to display on interface
             numWrongGuesses = 0;
             richTextBox1.Text = wordToDisplay;
             richTextBox1.ReadOnly = true;
             label1.Text = "Incorrect Guesses: " + numWrongGuesses;
-            pictureBox1.Visible = false;
-            pictureBox2.Visible = false;
-            pictureBox3.Visible = false;
-            pictureBox4.Visible = false;
-            pictureBox5.Visible = false;
-            pictureBox6.Visible = false;
+
+            // dont want to see snowman on start
+            bottomCircle.Visible = false;
+            middleCircle.Visible = false;
+            topCircle.Visible = false;
+            leftArm.Visible = false;
+            rightArm.Visible = false;
+            hat.Visible = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
+
+        // game logic when "enter" button is clicked
         private void button1_Click_1(object sender, EventArgs e)
         {
-            char guess = textBox1.Text[0];
+
+            // reads in single char input from user and will
+            // either prompt the user that they have already chosen that char
+            // and not do anything or will store the guess and display
+            // it on the screen
+            char guess = char.Parse(textBox1.Text);
             if (prevGuesses.Contains(guess)) {
                 MessageBox.Show("You alreaded gussed the letter " + guess + " , please try another.");
                 return;
@@ -61,6 +78,10 @@ namespace finalSnowmanProject
                     listBox1.Items.Add(c);
                 }
             }
+
+            // scans through the random word and if any chars in the random
+            // string match that, will record that the guess was correct
+            // and prepare the word to be changed on the display
             bool correctGuess = false;
             char[] word = wordToDisplay.ToCharArray();
             for (int i = 0; i < randomWordChoice.Length; i++)
@@ -71,17 +92,27 @@ namespace finalSnowmanProject
                     correctGuess = true;
                 }
             }
+
+            // increment numWrongGuesses on the screen if the user entered in
+            // an incorrect guess
             if (!correctGuess)
             {
                 numWrongGuesses++;
                 label1.Text = "Incorrect Guesses: " + numWrongGuesses;
             }
+            
+            // displays the current state of the user's game so far
             wordToDisplay = new string(word);
             richTextBox1.Text = wordToDisplay;
+
+            // win conditions:
+            // if the user has guessed incorreclty 6 times will display hat and a loss message and close program
+            // if the word doesn't contain any more underlines (that is the user has guessed every char)
+            // will display a win message and close program
             if (numWrongGuesses == 6)
             {
-                pictureBox6.BringToFront();
-                pictureBox6.Visible = true;
+                hat.BringToFront();
+                hat.Visible = true;
                 MessageBox.Show("You lost! The word was " + randomWordChoice);
                 Close();
             }
@@ -90,25 +121,27 @@ namespace finalSnowmanProject
                 MessageBox.Show("You won!");
                 Close();
             }
+
+            // for each wrong guess a different part of the snowman will be displayed
             if (numWrongGuesses >= 1)
             {
-                pictureBox1.Visible = true;
+                bottomCircle.Visible = true;
             }
             if (numWrongGuesses >= 2)
             {
-                pictureBox2.Visible = true;
+                middleCircle.Visible = true;
             }
             if (numWrongGuesses >= 3)
             {
-                pictureBox3.Visible = true;
+                topCircle.Visible = true;
             }
             if (numWrongGuesses >= 4)
             {
-                pictureBox4.Visible = true;
+                leftArm.Visible = true;
             }
             if (numWrongGuesses >= 5)
             {
-                pictureBox5.Visible = true;
+                rightArm.Visible = true;
             }
         }
 
