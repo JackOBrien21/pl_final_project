@@ -14,11 +14,19 @@ namespace finalSnowmanProject
 {
     public partial class Form1 : Form
     {
-
+        // list of words from dictionary.txt file
         private List<String> words;
+
+        // word that user needs to guess
         private string randomWordChoice;
+
+        // string that represents current state of user's guessing so far
         private string wordToDisplay;
+
+        // number of wrong guesses so far (will lose at 6)
         private int numWrongGuesses;
+
+        // sorted set used to track and display previous guesses made by user
         private SortedSet<char> prevGuesses = new SortedSet<char>();
         public Form1()
         {
