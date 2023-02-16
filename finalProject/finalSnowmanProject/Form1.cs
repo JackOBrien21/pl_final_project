@@ -58,28 +58,42 @@ namespace finalSnowmanProject
             hat.Visible = false;
         }
 
-        // game logic when "enter" button is clicked
+        // calls game logic function when "enter" button is clicked
         private void button1_Click_1(object sender, EventArgs e)
         {
+            gameLogic();
+        }
+
+        private void gameLogic()
+        {
+            // gives the user an error message if they try to submit an empty text box
+            if (textBox1.Text == "")
+            {
+                MessageBox.Show("You need to enter a char.");
+                return;
+            }
 
             // reads in single char input from user and will
             // either prompt the user that they have already chosen that char
             // and not do anything or will store the guess and display
             // it on the screen
             char guess = char.Parse(textBox1.Text);
-            if (prevGuesses.Contains(guess)) {
+            
+            if (prevGuesses.Contains(guess))
+            {
                 MessageBox.Show("You alreaded gussed the letter " + guess + " , please try another.");
+                textBox1.Text = "";
                 return;
             }
             else
             {
-                MessageBox.Show("Adding " + guess + " to the set.");
                 prevGuesses.Add(guess);
                 listBox1.Items.Clear(); // Item's aren't in sorted order so clear and then add each item back in sorted order
-                foreach (char c in prevGuesses) 
+                foreach (char c in prevGuesses)
                 {
                     listBox1.Items.Add(c);
                 }
+                textBox1.Text = "";
             }
 
             // scans through the random word and if any chars in the random
@@ -103,7 +117,7 @@ namespace finalSnowmanProject
                 numWrongGuesses++;
                 label1.Text = "Incorrect Guesses: " + numWrongGuesses;
             }
-            
+
             // displays the current state of the user's game so far
             wordToDisplay = new string(word);
             richTextBox1.Text = wordToDisplay;
@@ -145,6 +159,15 @@ namespace finalSnowmanProject
             if (numWrongGuesses >= 5)
             {
                 rightArm.Visible = true;
+            }
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char) Keys.Enter)
+            {
+                e.Handled = true;
+                gameLogic();
             }
         }
     }
