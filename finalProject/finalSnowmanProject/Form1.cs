@@ -170,5 +170,163 @@ namespace finalSnowmanProject
                 gameLogic();
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // equal to press letter a on keyboard and then press enter
+            textBox1.Text = "a";
+            gameLogic();
+            
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "b";
+            gameLogic();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "c";
+            gameLogic();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "d";
+            gameLogic();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "e";
+            gameLogic();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "f";
+            gameLogic();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "g";
+            gameLogic();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "h";
+            gameLogic();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "i";
+            gameLogic();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "j";
+            gameLogic();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "k";
+            gameLogic();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "l";
+            gameLogic();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "m";
+            gameLogic();
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "n";
+            gameLogic();
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "o";
+            gameLogic();
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "p";
+            gameLogic();
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "q";
+            gameLogic();
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "r";
+            gameLogic();
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "s";
+            gameLogic();
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "t";
+            gameLogic();
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "u";
+            gameLogic();
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "v";
+            gameLogic();
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "w";
+            gameLogic();
+        }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "x";
+            gameLogic();
+        }
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "y";
+            gameLogic();
+        }
+
+        private void button27_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "z";
+            gameLogic();
+        }
     }
 }

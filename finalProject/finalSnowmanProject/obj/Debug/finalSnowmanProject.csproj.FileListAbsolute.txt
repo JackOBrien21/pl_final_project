@@ -20,3 +20,14 @@ C:\Users\Admin\Desktop\programming_languages\pl_final_project\finalProject\final
 C:\Users\Admin\Desktop\programming_languages\pl_final_project\finalProject\finalSnowmanProject\obj\Debug\finalSnowmanProject.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Desktop\programming_languages\pl_final_project\finalProject\finalSnowmanProject\obj\Debug\finalSnowmanProject.exe
 C:\Users\Admin\Desktop\programming_languages\pl_final_project\finalProject\finalSnowmanProject\obj\Debug\finalSnowmanProject.pdb
+C:\Users\Edward Liu\RiderProjects\pl_final_project\finalProject\finalSnowmanProject\bin\Debug\finalSnowmanProject.exe.config
+C:\Users\Edward Liu\RiderProjects\pl_final_project\finalProject\finalSnowmanProject\bin\Debug\finalSnowmanProject.exe
+C:\Users\Edward Liu\RiderProjects\pl_final_project\finalProject\finalSnowmanProject\bin\Debug\finalSnowmanProject.pdb
+C:\Users\Edward Liu\RiderProjects\pl_final_project\finalProject\finalSnowmanProject\obj\Debug\finalSnowmanProject.csproj.AssemblyReference.cache
+C:\Users\Edward Liu\RiderProjects\pl_final_project\finalProject\finalSnowmanProject\obj\Debug\finalSnowmanProject.csproj.SuggestedBindingRedirects.cache
+C:\Users\Edward Liu\RiderProjects\pl_final_project\finalProject\finalSnowmanProject\obj\Debug\finalSnowmanProject.Form1.resources
+C:\Users\Edward Liu\RiderProjects\pl_final_project\finalProject\finalSnowmanProject\obj\Debug\finalSnowmanProject.Properties.Resources.resources
+C:\Users\Edward Liu\RiderProjects\pl_final_project\finalProject\finalSnowmanProject\obj\Debug\finalSnowmanProject.csproj.GenerateResource.cache
+C:\Users\Edward Liu\RiderProjects\pl_final_project\finalProject\finalSnowmanProject\obj\Debug\finalSnowmanProject.csproj.CoreCompileInputs.cache
+C:\Users\Edward Liu\RiderProjects\pl_final_project\finalProject\finalSnowmanProject\obj\Debug\finalSnowmanProject.exe
+C:\Users\Edward Liu\RiderProjects\pl_final_project\finalProject\finalSnowmanProject\obj\Debug\finalSnowmanProject.pdb
