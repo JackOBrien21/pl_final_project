@@ -177,157 +177,209 @@ namespace finalSnowmanProject
         {
             // equal to press letter a on keyboard and then press enter
             textBox1.Text = "a";
+            // grey out button
+            button2.Enabled = false;
             gameLogic();
-            
+
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             textBox1.Text = "b";
+            // grey out button
+            button4.Enabled = false;
             gameLogic();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             textBox1.Text = "c";
+            // grey out button
+            button3.Enabled = false;
             gameLogic();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             textBox1.Text = "d";
+            // grey out button
+            button5.Enabled = false;
             gameLogic();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             textBox1.Text = "e";
+            // grey out button
+            button6.Enabled = false;
             gameLogic();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             textBox1.Text = "f";
+            // grey out button
+            button7.Enabled = false;
             gameLogic();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
             textBox1.Text = "g";
+            // grey out button
+            button8.Enabled = false;
             gameLogic();
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
             textBox1.Text = "h";
+            // grey out button
+            button9.Enabled = false;
             gameLogic();
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
             textBox1.Text = "i";
+            // grey out button
+            button10.Enabled = false;
             gameLogic();
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
             textBox1.Text = "j";
+            // grey out button
+            button11.Enabled = false;
             gameLogic();
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
             textBox1.Text = "k";
+            // grey out button
+            button12.Enabled = false;
             gameLogic();
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
             textBox1.Text = "l";
+            // grey out button
+            button13.Enabled = false;
             gameLogic();
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
             textBox1.Text = "m";
+            // grey out button
+            button14.Enabled = false;
             gameLogic();
         }
 
         private void button15_Click(object sender, EventArgs e)
         {
             textBox1.Text = "n";
+            // grey out button
+            button15.Enabled = false;
             gameLogic();
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
             textBox1.Text = "o";
+            // grey out button
+            button16.Enabled = false;
             gameLogic();
         }
 
         private void button17_Click(object sender, EventArgs e)
         {
             textBox1.Text = "p";
+            // grey out button
+            button17.Enabled = false;
             gameLogic();
         }
 
         private void button18_Click(object sender, EventArgs e)
         {
             textBox1.Text = "q";
+            // grey out button
+            button18.Enabled = false;
             gameLogic();
         }
 
         private void button19_Click(object sender, EventArgs e)
         {
             textBox1.Text = "r";
+            // grey out button
+            button19.Enabled = false;
             gameLogic();
         }
 
         private void button20_Click(object sender, EventArgs e)
         {
             textBox1.Text = "s";
+            // grey out button
+            button20.Enabled = false;
             gameLogic();
         }
 
         private void button21_Click(object sender, EventArgs e)
         {
             textBox1.Text = "t";
+            // grey out button
+            button21.Enabled = false;
             gameLogic();
         }
 
         private void button22_Click(object sender, EventArgs e)
         {
             textBox1.Text = "u";
+            // grey out button
+            button22.Enabled = false;
             gameLogic();
         }
 
         private void button23_Click(object sender, EventArgs e)
         {
             textBox1.Text = "v";
+            // grey out button
+            button23.Enabled = false;
             gameLogic();
         }
 
         private void button24_Click(object sender, EventArgs e)
         {
             textBox1.Text = "w";
+            // grey out button
+            button24.Enabled = false;
             gameLogic();
         }
 
         private void button25_Click(object sender, EventArgs e)
         {
             textBox1.Text = "x";
+            // grey out button
+            button25.Enabled = false;
             gameLogic();
         }
 
         private void button26_Click(object sender, EventArgs e)
         {
             textBox1.Text = "y";
+            // grey out button
+            button26.Enabled = false;
             gameLogic();
         }
 
         private void button27_Click(object sender, EventArgs e)
         {
             textBox1.Text = "z";
+            // grey out button
+            button27.Enabled = false;
             gameLogic();
         }
     }
