@@ -43,7 +43,7 @@ namespace finalSnowmanProject
             randomWordChoice = words[random.Next(0, words.Count)];
             wordToDisplay = new string('_', randomWordChoice.Length);
 
-           // various things to display on interface
+            // various things to display on interface
             numWrongGuesses = 0;
             richTextBox1.Text = wordToDisplay;
             richTextBox1.ReadOnly = true;
@@ -58,16 +58,10 @@ namespace finalSnowmanProject
             hat.Visible = false;
         }
 
-        // calls game logic function when "enter" button is clicked
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            gameLogic();
-        }
-
         private void gameLogic()
         {
-            // gives the user an error message if they try to submit an empty text box
-            if (textBox1.Text == "")
+            // gives the user an error message if they try to submit an empty text box or a single space
+            if (textBox1.Text == "" || textBox1.Text == " ")
             {
                 MessageBox.Show("You need to enter a char.");
                 return;
@@ -161,7 +155,7 @@ namespace finalSnowmanProject
                 rightArm.Visible = true;
             }
         }
-
+        // will submit a guess if the user is focused on the input box and presses "enter" on the keyboard
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char) Keys.Enter)
@@ -171,6 +165,14 @@ namespace finalSnowmanProject
             }
         }
 
+        // calls game logic function when "enter" button is clicked
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            gameLogic();
+        }
+
+        // button2 - button27 make up graphical keyboard, when one is pushed it will do some thing
+        // as typing in a guess and pressing enter
         private void button2_Click(object sender, EventArgs e)
         {
             // equal to press letter a on keyboard and then press enter
