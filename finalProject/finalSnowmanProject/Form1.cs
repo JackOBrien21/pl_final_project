@@ -42,6 +42,8 @@ namespace finalSnowmanProject
             Random random = new Random();
             randomWordChoice = words[random.Next(0, words.Count)];
             wordToDisplay = new string('_', randomWordChoice.Length);
+            // (spaces between each char and a space after the last char)
+            wordToDisplay = string.Join(" ", wordToDisplay.ToCharArray()) + " ";
 
             // various things to display on interface
             numWrongGuesses = 0;
