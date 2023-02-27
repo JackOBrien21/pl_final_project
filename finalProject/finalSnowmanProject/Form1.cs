@@ -41,7 +41,9 @@ namespace finalSnowmanProject
             // word the user needs to guess
             Random random = new Random();
             randomWordChoice = words[random.Next(0, words.Count)];
-            wordToDisplay = new string('_', randomWordChoice.Length);
+            // add spaces between each char and a space after the last char in randomWordChoice
+            randomWordChoice = string.Join(" ", randomWordChoice.ToCharArray()) + " ";
+            wordToDisplay = new string('_', randomWordChoice.Length/2);
             // (spaces between each char and a space after the last char)
             wordToDisplay = string.Join(" ", wordToDisplay.ToCharArray()) + " ";
 
@@ -113,10 +115,22 @@ namespace finalSnowmanProject
                 numWrongGuesses++;
                 label1.Text = "Incorrect Guesses: " + numWrongGuesses;
             }
-
-            // displays the current state of the user's game so far
-            wordToDisplay = new string(word);
+            
+            wordToDisplay = new string(word); // convert char array back to string
+            
+            // display the char in the correct odd position
+            // e.g. if the user guesses "a" and the word is "cat" the 
+            // display will be "_ a _ "
+            
+            
+            
             richTextBox1.Text = wordToDisplay;
+            
+
+
+
+
+
 
             // win conditions:
             // if the user has guessed incorreclty 6 times will display hat and a loss message and close program
@@ -181,6 +195,8 @@ namespace finalSnowmanProject
             textBox1.Text = "a";
             // grey out button
             button2.Enabled = false;
+            // do not highlight button after it is clicked
+            button2.TabStop = false;
             gameLogic();
 
         }
@@ -190,6 +206,7 @@ namespace finalSnowmanProject
             textBox1.Text = "b";
             // grey out button
             button4.Enabled = false;
+            button4.TabStop = false;
             gameLogic();
         }
 
@@ -198,6 +215,8 @@ namespace finalSnowmanProject
             textBox1.Text = "c";
             // grey out button
             button3.Enabled = false;
+            // disable button from being highlighted
+            button3.TabStop = false;
             gameLogic();
         }
 
@@ -206,6 +225,7 @@ namespace finalSnowmanProject
             textBox1.Text = "d";
             // grey out button
             button5.Enabled = false;
+            button5.TabStop = false;
             gameLogic();
         }
 
@@ -214,6 +234,7 @@ namespace finalSnowmanProject
             textBox1.Text = "e";
             // grey out button
             button6.Enabled = false;
+            button6.TabStop = false;
             gameLogic();
         }
 
@@ -222,6 +243,7 @@ namespace finalSnowmanProject
             textBox1.Text = "f";
             // grey out button
             button7.Enabled = false;
+            button7.TabStop = false;
             gameLogic();
         }
 
@@ -230,6 +252,7 @@ namespace finalSnowmanProject
             textBox1.Text = "g";
             // grey out button
             button8.Enabled = false;
+            button8.TabStop = false;
             gameLogic();
         }
 
@@ -238,6 +261,7 @@ namespace finalSnowmanProject
             textBox1.Text = "h";
             // grey out button
             button9.Enabled = false;
+            button9.TabStop = false;
             gameLogic();
         }
 
@@ -246,6 +270,7 @@ namespace finalSnowmanProject
             textBox1.Text = "i";
             // grey out button
             button10.Enabled = false;
+            button10.TabStop = false;
             gameLogic();
         }
 
@@ -254,6 +279,7 @@ namespace finalSnowmanProject
             textBox1.Text = "j";
             // grey out button
             button11.Enabled = false;
+            button11.TabStop = false;
             gameLogic();
         }
 
@@ -262,6 +288,7 @@ namespace finalSnowmanProject
             textBox1.Text = "k";
             // grey out button
             button12.Enabled = false;
+            button12.TabStop = false;
             gameLogic();
         }
 
@@ -270,6 +297,7 @@ namespace finalSnowmanProject
             textBox1.Text = "l";
             // grey out button
             button13.Enabled = false;
+            button13.TabStop = false;
             gameLogic();
         }
 
@@ -278,6 +306,7 @@ namespace finalSnowmanProject
             textBox1.Text = "m";
             // grey out button
             button14.Enabled = false;
+            button14.TabStop = false;
             gameLogic();
         }
 
@@ -286,6 +315,7 @@ namespace finalSnowmanProject
             textBox1.Text = "n";
             // grey out button
             button15.Enabled = false;
+            button15.TabStop = false;
             gameLogic();
         }
 
@@ -294,6 +324,7 @@ namespace finalSnowmanProject
             textBox1.Text = "o";
             // grey out button
             button16.Enabled = false;
+            button16.TabStop = false;
             gameLogic();
         }
 
@@ -302,6 +333,7 @@ namespace finalSnowmanProject
             textBox1.Text = "p";
             // grey out button
             button17.Enabled = false;
+            button17.TabStop = false;
             gameLogic();
         }
 
@@ -310,6 +342,7 @@ namespace finalSnowmanProject
             textBox1.Text = "q";
             // grey out button
             button18.Enabled = false;
+            button18.TabStop = false;
             gameLogic();
         }
 
@@ -318,6 +351,7 @@ namespace finalSnowmanProject
             textBox1.Text = "r";
             // grey out button
             button19.Enabled = false;
+            button19.TabStop = false;
             gameLogic();
         }
 
@@ -326,6 +360,7 @@ namespace finalSnowmanProject
             textBox1.Text = "s";
             // grey out button
             button20.Enabled = false;
+            button20.TabStop = false;
             gameLogic();
         }
 
@@ -334,6 +369,7 @@ namespace finalSnowmanProject
             textBox1.Text = "t";
             // grey out button
             button21.Enabled = false;
+            button21.TabStop = false;
             gameLogic();
         }
 
@@ -342,6 +378,7 @@ namespace finalSnowmanProject
             textBox1.Text = "u";
             // grey out button
             button22.Enabled = false;
+            button22.TabStop = false;
             gameLogic();
         }
 
@@ -350,6 +387,7 @@ namespace finalSnowmanProject
             textBox1.Text = "v";
             // grey out button
             button23.Enabled = false;
+            button23.TabStop = false;
             gameLogic();
         }
 
@@ -358,6 +396,7 @@ namespace finalSnowmanProject
             textBox1.Text = "w";
             // grey out button
             button24.Enabled = false;
+            button24.TabStop = false;
             gameLogic();
         }
 
@@ -366,6 +405,7 @@ namespace finalSnowmanProject
             textBox1.Text = "x";
             // grey out button
             button25.Enabled = false;
+            button25.TabStop = false;
             gameLogic();
         }
 
@@ -374,6 +414,7 @@ namespace finalSnowmanProject
             textBox1.Text = "y";
             // grey out button
             button26.Enabled = false;
+            button26.TabStop = false;
             gameLogic();
         }
 
@@ -382,6 +423,7 @@ namespace finalSnowmanProject
             textBox1.Text = "z";
             // grey out button
             button27.Enabled = false;
+            button27.TabStop = false;
             gameLogic();
         }
     }
