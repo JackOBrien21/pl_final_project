@@ -19,6 +19,9 @@ namespace finalSnowmanProject
 
         // word that user needs to guess
         private string randomWordChoice;
+        
+        // word that needs to be shown as answer
+        private string answerWord;
 
         // string that represents current state of user's guessing so far
         private string wordToDisplay;
@@ -41,6 +44,7 @@ namespace finalSnowmanProject
             // word the user needs to guess
             Random random = new Random();
             randomWordChoice = words[random.Next(0, words.Count)];
+            answerWord = randomWordChoice;
             // add spaces between each char and a space after the last char in randomWordChoice
             randomWordChoice = string.Join(" ", randomWordChoice.ToCharArray()) + " ";
             wordToDisplay = new string('_', randomWordChoice.Length/2);
@@ -118,12 +122,6 @@ namespace finalSnowmanProject
             
             wordToDisplay = new string(word); // convert char array back to string
             
-            // display the char in the correct odd position
-            // e.g. if the user guesses "a" and the word is "cat" the 
-            // display will be "_ a _ "
-            
-            
-            
             richTextBox1.Text = wordToDisplay;
             
 
@@ -140,7 +138,7 @@ namespace finalSnowmanProject
             {
                 hat.BringToFront();
                 hat.Visible = true;
-                MessageBox.Show("You lost! The word was " + randomWordChoice);
+                MessageBox.Show("You lost! The word was " + answerWord);
                 Close();
             }
             else if (!wordToDisplay.Contains('_'))
