@@ -1,0 +1,4 @@
+C:\Users\lukes\Downloads\pl_final_project-main\obj\Debug\net7.0\pl_final_project-main.csproj.AssemblyReference.cache
+C:\Users\lukes\Downloads\pl_final_project-main\obj\Debug\net7.0\finalSnowmanProject.Form1.resources
+C:\Users\lukes\Downloads\pl_final_project-main\obj\Debug\net7.0\pl_final_project_main.finalProject.finalSnowmanProject.Properties.Resources.resources
+C:\Users\lukes\Downloads\pl_final_project-main\obj\Debug\net7.0\pl_final_project-main.csproj.GenerateResource.cache
