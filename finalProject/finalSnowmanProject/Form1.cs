@@ -29,6 +29,9 @@ namespace finalSnowmanProject
         // number of wrong guesses so far (will lose at 6)
         private int numWrongGuesses;
 
+
+        private string guessFromUser;
+
         // sorted set used to track and display previous guesses made by user
         private SortedSet<char> prevGuesses = new SortedSet<char>();
         public Form1()
@@ -64,12 +67,16 @@ namespace finalSnowmanProject
             leftArm.Visible = false;
             rightArm.Visible = false;
             hat.Visible = false;
+
+            // hint word should be hidden at first
+            label6.Visible = false;
+            label6.Text = answerWord;
         }
 
         private void gameLogic()
         {
             // gives the user an error message if they try to submit an empty text box or a single space
-            if (textBox1.Text == "" || textBox1.Text == " ")
+            if (guessFromUser == "" || guessFromUser == " ")
             {
                 MessageBox.Show("You need to enter a char.");
                 return;
@@ -79,12 +86,12 @@ namespace finalSnowmanProject
             // either prompt the user that they have already chosen that char
             // and not do anything or will store the guess and display
             // it on the screen
-            char guess = char.Parse(textBox1.Text);
+            char guess = char.Parse(guessFromUser);
             
             if (prevGuesses.Contains(guess))
             {
-                MessageBox.Show("You alreaded gussed the letter " + guess + " , please try another.");
-                textBox1.Text = "";
+                MessageBox.Show("You already guessed the letter " + guess + " , please try another.");
+                guessFromUser = "";
                 return;
             }
             else
@@ -95,7 +102,7 @@ namespace finalSnowmanProject
                 {
                     listBox1.Items.Add(c);
                 }
-                textBox1.Text = "";
+                guessFromUser = "";
             }
 
             // scans through the random word and if any chars in the random
@@ -121,15 +128,8 @@ namespace finalSnowmanProject
             }
             
             wordToDisplay = new string(word); // convert char array back to string
-            
             richTextBox1.Text = wordToDisplay;
             
-
-
-
-
-
-
             // win conditions:
             // if the user has guessed incorreclty 6 times will display hat and a loss message and close program
             // if the word doesn't contain any more underlines (that is the user has guessed every char)
@@ -138,7 +138,7 @@ namespace finalSnowmanProject
             {
                 hat.BringToFront();
                 hat.Visible = true;
-                MessageBox.Show("You lost! The word was " + answerWord);
+                MessageBox.Show("You lost! The word was " + answerWord + ".");
                 Close();
             }
             else if (!wordToDisplay.Contains('_'))
@@ -190,7 +190,7 @@ namespace finalSnowmanProject
         private void button2_Click(object sender, EventArgs e)
         {
             // equal to press letter a on keyboard and then press enter
-            textBox1.Text = "a";
+            guessFromUser = "a";
             // grey out button
             button2.Enabled = false;
             // do not highlight button after it is clicked
@@ -201,7 +201,7 @@ namespace finalSnowmanProject
 
         private void button4_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "b";
+            guessFromUser = "b";
             // grey out button
             button4.Enabled = false;
             button4.TabStop = false;
@@ -210,7 +210,7 @@ namespace finalSnowmanProject
 
         private void button3_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "c";
+            guessFromUser = "c";
             // grey out button
             button3.Enabled = false;
             // disable button from being highlighted
@@ -220,7 +220,7 @@ namespace finalSnowmanProject
 
         private void button5_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "d";
+            guessFromUser = "d";
             // grey out button
             button5.Enabled = false;
             button5.TabStop = false;
@@ -229,7 +229,7 @@ namespace finalSnowmanProject
 
         private void button6_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "e";
+            guessFromUser = "e";
             // grey out button
             button6.Enabled = false;
             button6.TabStop = false;
@@ -238,7 +238,7 @@ namespace finalSnowmanProject
 
         private void button7_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "f";
+            guessFromUser = "f";
             // grey out button
             button7.Enabled = false;
             button7.TabStop = false;
@@ -247,7 +247,7 @@ namespace finalSnowmanProject
 
         private void button8_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "g";
+            guessFromUser = "g";
             // grey out button
             button8.Enabled = false;
             button8.TabStop = false;
@@ -256,7 +256,7 @@ namespace finalSnowmanProject
 
         private void button9_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "h";
+            guessFromUser = "h";
             // grey out button
             button9.Enabled = false;
             button9.TabStop = false;
@@ -265,7 +265,7 @@ namespace finalSnowmanProject
 
         private void button10_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "i";
+            guessFromUser = "i";
             // grey out button
             button10.Enabled = false;
             button10.TabStop = false;
@@ -274,7 +274,7 @@ namespace finalSnowmanProject
 
         private void button11_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "j";
+            guessFromUser = "j";
             // grey out button
             button11.Enabled = false;
             button11.TabStop = false;
@@ -283,7 +283,7 @@ namespace finalSnowmanProject
 
         private void button12_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "k";
+            guessFromUser = "k";
             // grey out button
             button12.Enabled = false;
             button12.TabStop = false;
@@ -292,7 +292,7 @@ namespace finalSnowmanProject
 
         private void button13_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "l";
+            guessFromUser = "l";
             // grey out button
             button13.Enabled = false;
             button13.TabStop = false;
@@ -301,7 +301,7 @@ namespace finalSnowmanProject
 
         private void button14_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "m";
+            guessFromUser = "m";
             // grey out button
             button14.Enabled = false;
             button14.TabStop = false;
@@ -310,7 +310,7 @@ namespace finalSnowmanProject
 
         private void button15_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "n";
+            guessFromUser = "n";
             // grey out button
             button15.Enabled = false;
             button15.TabStop = false;
@@ -319,7 +319,7 @@ namespace finalSnowmanProject
 
         private void button16_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "o";
+            guessFromUser = "o";
             // grey out button
             button16.Enabled = false;
             button16.TabStop = false;
@@ -328,7 +328,7 @@ namespace finalSnowmanProject
 
         private void button17_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "p";
+            guessFromUser = "p";
             // grey out button
             button17.Enabled = false;
             button17.TabStop = false;
@@ -337,7 +337,7 @@ namespace finalSnowmanProject
 
         private void button18_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "q";
+            guessFromUser = "q";
             // grey out button
             button18.Enabled = false;
             button18.TabStop = false;
@@ -346,7 +346,7 @@ namespace finalSnowmanProject
 
         private void button19_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "r";
+            guessFromUser = "r";
             // grey out button
             button19.Enabled = false;
             button19.TabStop = false;
@@ -355,7 +355,7 @@ namespace finalSnowmanProject
 
         private void button20_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "s";
+            guessFromUser = "s";
             // grey out button
             button20.Enabled = false;
             button20.TabStop = false;
@@ -364,7 +364,7 @@ namespace finalSnowmanProject
 
         private void button21_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "t";
+            guessFromUser = "t";
             // grey out button
             button21.Enabled = false;
             button21.TabStop = false;
@@ -373,7 +373,7 @@ namespace finalSnowmanProject
 
         private void button22_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "u";
+            guessFromUser = "u";
             // grey out button
             button22.Enabled = false;
             button22.TabStop = false;
@@ -382,7 +382,7 @@ namespace finalSnowmanProject
 
         private void button23_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "v";
+            guessFromUser = "v";
             // grey out button
             button23.Enabled = false;
             button23.TabStop = false;
@@ -391,7 +391,7 @@ namespace finalSnowmanProject
 
         private void button24_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "w";
+            guessFromUser = "w";
             // grey out button
             button24.Enabled = false;
             button24.TabStop = false;
@@ -400,7 +400,7 @@ namespace finalSnowmanProject
 
         private void button25_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "x";
+            guessFromUser = "x";
             // grey out button
             button25.Enabled = false;
             button25.TabStop = false;
@@ -409,7 +409,7 @@ namespace finalSnowmanProject
 
         private void button26_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "y";
+            guessFromUser = "y";
             // grey out button
             button26.Enabled = false;
             button26.TabStop = false;
@@ -418,11 +418,43 @@ namespace finalSnowmanProject
 
         private void button27_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "z";
+            guessFromUser = "z";
             // grey out button
             button27.Enabled = false;
             button27.TabStop = false;
             gameLogic();
+        }
+
+        private void button29_Click(object sender, EventArgs e)
+        {
+            guessFromUser = "-";
+            // grey out button
+            button29.Enabled = false;
+            button29.TabStop = false;
+            gameLogic();
+        }
+
+        private void button30_Click(object sender, EventArgs e)
+        {
+            guessFromUser = "\'";
+            // grey out button
+            button30.Enabled = false;
+            button30.TabStop = false;
+            gameLogic();
+        }
+
+        private void button28_Click(object sender, EventArgs e)
+        {
+            if (!label6.Visible)
+            {
+                label6.Visible = true;
+                button28.Text = "Hide Word";
+            }
+            else
+            {
+                label6.Visible = false;
+                button28.Text = "Show Word (for debugging)";
+            }
         }
     }
 }
