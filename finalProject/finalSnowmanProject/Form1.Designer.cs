@@ -82,9 +82,9 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(22, 131);
+            this.richTextBox1.Location = new System.Drawing.Point(12, 94);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(160, 161);
+            this.richTextBox1.Size = new System.Drawing.Size(185, 192);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
@@ -492,7 +492,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label5.Location = new System.Drawing.Point(41, 108);
+            this.label5.Location = new System.Drawing.Point(42, 57);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(127, 20);
             this.label5.TabIndex = 40;

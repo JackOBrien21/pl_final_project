@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Drawing.Text;
 
 namespace finalSnowmanProject
 {
@@ -29,7 +30,7 @@ namespace finalSnowmanProject
         // number of wrong guesses so far (will lose at 6)
         private int numWrongGuesses;
 
-
+        // input from user
         private string guessFromUser;
 
         // sorted set used to track and display previous guesses made by user
@@ -43,17 +44,9 @@ namespace finalSnowmanProject
             // into the class member List<String> words
             words = File.ReadAllLines("dictionary.txt").ToList();
 
-            // Picks a random word from words and sets that as the
-            // word the user needs to guess
-            Random random = new Random();
-            randomWordChoice = words[random.Next(0, words.Count)];
-            answerWord = randomWordChoice;
-            // add spaces between each char and a space after the last char in randomWordChoice
-            randomWordChoice = string.Join(" ", randomWordChoice.ToCharArray()) + " ";
-            wordToDisplay = new string('_', randomWordChoice.Length/2);
-            // (spaces between each char and a space after the last char)
-            wordToDisplay = string.Join(" ", wordToDisplay.ToCharArray()) + " ";
-
+            // picks a random word from the dictionary file and sets that as the word to guess
+            getRandomWord();
+ 
             // various things to display on interface
             numWrongGuesses = 0;
             richTextBox1.Text = wordToDisplay;
@@ -61,12 +54,7 @@ namespace finalSnowmanProject
             label1.Text = "Incorrect Guesses: " + numWrongGuesses;
 
             // dont want to see snowman on start
-            bottomCircle.Visible = false;
-            middleCircle.Visible = false;
-            topCircle.Visible = false;
-            leftArm.Visible = false;
-            rightArm.Visible = false;
-            hat.Visible = false;
+            hideSnowman();
 
             // hint word should be hidden at first
             label6.Visible = false;
@@ -75,12 +63,6 @@ namespace finalSnowmanProject
 
         private void gameLogic()
         {
-            // gives the user an error message if they try to submit an empty text box or a single space
-            if (guessFromUser == "" || guessFromUser == " ")
-            {
-                MessageBox.Show("You need to enter a char.");
-                return;
-            }
 
             // reads in single char input from user and will
             // either prompt the user that they have already chosen that char
@@ -138,13 +120,11 @@ namespace finalSnowmanProject
             {
                 hat.BringToFront();
                 hat.Visible = true;
-                MessageBox.Show("You lost! The word was " + answerWord + ".");
-                Close();
+                restartGame(false); // false represents game lost
             }
             else if (!wordToDisplay.Contains('_'))
             {
-                MessageBox.Show("You won!");
-                Close();
+                restartGame(true); // true represents game won
             }
 
             // for each wrong guess a different part of the snowman will be displayed
@@ -168,21 +148,6 @@ namespace finalSnowmanProject
             {
                 rightArm.Visible = true;
             }
-        }
-        // will submit a guess if the user is focused on the input box and presses "enter" on the keyboard
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char) Keys.Enter)
-            {
-                e.Handled = true;
-                gameLogic();
-            }
-        }
-
-        // calls game logic function when "enter" button is clicked
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            gameLogic();
         }
 
         // button2 - button27 make up graphical keyboard, when one is pushed it will do some thing
@@ -444,6 +409,7 @@ namespace finalSnowmanProject
         }
 
         private void button28_Click(object sender, EventArgs e)
+            // hint button for debugging purposes
         {
             if (!label6.Visible)
             {
@@ -455,6 +421,152 @@ namespace finalSnowmanProject
                 label6.Visible = false;
                 button28.Text = "Show Word (for debugging)";
             }
+        }
+
+        private void restartGame(bool hasWon)
+        {
+            if (hasWon)
+            {
+                string msg = "You won! Would you like to play again?";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result;
+
+                result = MessageBox.Show(msg, "You won!", buttons);
+                if (result == DialogResult.Yes)
+                {
+                    resetGameVars();
+                } 
+                else
+                {
+                    Close();
+                }
+            }
+            else
+            {
+                string msg = "You lost! The word was " + answerWord + ". Would you like to play again?";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result;
+
+                result = MessageBox.Show(msg, "You lost!", buttons);
+                if (result == DialogResult.Yes)
+                {
+                    resetGameVars();
+                }
+                else
+                {
+                    Close();
+                }
+            }
+        }
+
+        // function which resets all the variables, picks a new word, resets graphical interface
+        private void resetGameVars()
+        {
+            // picks random word from dictionary.txt file and sets that as the new word to guess
+            getRandomWord();
+
+            // clears prevGuesses box in interface
+            listBox1.Items.Clear();
+            prevGuesses.Clear();
+
+
+            // hides word so that next game starts fresh and resets hint button
+            label6.Visible = false;
+            button28.Text = "Show Word (for debugging)";
+            
+            // resets numWrongGuesses
+            numWrongGuesses = 0;
+            label1.Text = "Incorrect Guesses: " + numWrongGuesses;
+
+            // hides snowman
+            hideSnowman();
+
+            // allow user to enter guesses from previous game
+            button2.Enabled = true;
+            button2.TabStop = true;
+            button3.Enabled = true;
+            button3.TabStop = true;
+            button4.Enabled = true;
+            button4.TabStop = true;
+            button5.Enabled = true;
+            button5.TabStop = true;
+            button6.Enabled = true;
+            button6.TabStop = true;
+            button7.Enabled = true;
+            button7.TabStop = true;
+            button8.Enabled = true;
+            button8.TabStop = true;
+            button9.Enabled = true;
+            button9.TabStop = true;
+            button10.Enabled = true;
+            button10.TabStop = true;
+            button11.Enabled = true;
+            button11.TabStop = true;
+            button12.Enabled = true;
+            button12.TabStop = true;
+            button13.Enabled = true;
+            button13.TabStop = true;
+            button14.Enabled = true;
+            button14.TabStop = true;
+            button15.Enabled = true;
+            button15.TabStop = true;
+            button16.Enabled = true;
+            button16.TabStop = true;
+            button17.Enabled = true;
+            button17.TabStop = true;
+            button18.Enabled = true;
+            button18.TabStop = true;
+            button19.Enabled = true;
+            button19.TabStop = true;
+            button20.Enabled = true;
+            button20.TabStop = true;
+            button21.Enabled = true;
+            button21.TabStop = true;
+            button22.Enabled = true;
+            button22.TabStop = true;
+            button23.Enabled = true;
+            button23.TabStop = true;
+            button24.Enabled = true;
+            button24.TabStop = true;
+            button25.Enabled = true;
+            button25.TabStop = true;
+            button26.Enabled = true;
+            button26.TabStop = true;
+            button27.Enabled = true;
+            button27.TabStop = true;
+            button29.Enabled = true;
+            button29.TabStop = true;
+            button30.Enabled = true;
+            button30.TabStop = true;
+        }
+
+        private void getRandomWord()
+        {
+            // Picks a random word from words and sets that as the
+            // word the user needs to guess
+            Random random = new Random();
+            randomWordChoice = words[random.Next(0, words.Count)];
+            answerWord = randomWordChoice;
+            // add spaces between each char and a space after the last char in randomWordChoice
+            randomWordChoice = string.Join(" ", randomWordChoice.ToCharArray()) + " ";
+            wordToDisplay = new string('_', randomWordChoice.Length / 2);
+            // (spaces between each char and a space after the last char)
+            wordToDisplay = string.Join(" ", wordToDisplay.ToCharArray()) + " ";
+            richTextBox1.Text = wordToDisplay;
+
+            // sets hint as word for next game
+            label6.Text = answerWord;
+        }
+
+        private void hideSnowman()
+        {
+            // hides snowman parts
+            bottomCircle.Visible = false;
+            middleCircle.Visible = false;
+            topCircle.Visible = false;
+            leftArm.Visible = false;
+            rightArm.Visible = false;
+            hat.Visible = false;
         }
     }
 }
