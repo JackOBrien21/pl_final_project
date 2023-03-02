@@ -536,6 +536,8 @@ namespace finalSnowmanProject
             button27.TabStop = true;
             button29.Enabled = true;
             button29.TabStop = true;
+            button30.Enabled = true;
+            button30.TabStop = true;
         }
         private void getRandomWord()
         {
