@@ -73,6 +73,63 @@ namespace finalSnowmanProject
             label6.Text = answerWord;
         }
 
+        // restart function that will be called when the user wants to play again
+        // will close the current window and open a new one
+        private void restart()
+        {
+            // initialize all variables to their original values
+            words = File.ReadAllLines("dictionary.txt").ToList();
+            Random random = new Random();
+            randomWordChoice = words[random.Next(0, words.Count)];
+            answerWord = randomWordChoice;
+            randomWordChoice = string.Join(" ", randomWordChoice.ToCharArray()) + " ";
+            wordToDisplay = new string('_', randomWordChoice.Length/2);
+            wordToDisplay = string.Join(" ", wordToDisplay.ToCharArray()) + " ";
+            numWrongGuesses = 0;
+            richTextBox1.Text = wordToDisplay;
+            label1.Text = "Incorrect Guesses: " + numWrongGuesses;
+            prevGuesses.Clear();
+            listBox1.Items.Clear();
+            guessFromUser = "";
+            bottomCircle.Visible = false;
+            middleCircle.Visible = false;
+            topCircle.Visible = false;
+            leftArm.Visible = false;
+            rightArm.Visible = false;
+            hat.Visible = false;
+            label6.Visible = false;
+            label6.Text = answerWord;
+            // initialize all keyboard buttons to be enabled
+            button2.Enabled = true;
+            button3.Enabled = true;
+            button4.Enabled = true;
+            button5.Enabled = true;
+            button6.Enabled = true;
+            button7.Enabled = true;
+            button8.Enabled = true;
+            button9.Enabled = true;
+            button10.Enabled = true;
+            button11.Enabled = true;
+            button12.Enabled = true;
+            button13.Enabled = true;
+            button14.Enabled = true;
+            button15.Enabled = true;
+            button16.Enabled = true;
+            button17.Enabled = true;
+            button18.Enabled = true;
+            button19.Enabled = true;
+            button20.Enabled = true;
+            button21.Enabled = true;
+            button22.Enabled = true;
+            button23.Enabled = true;
+            button24.Enabled = true;
+            button25.Enabled = true;
+            button26.Enabled = true;
+            button27.Enabled = true;
+            button28.Enabled = true;
+            button29.Enabled = true;
+        }
+
         private void gameLogic()
         {
             // gives the user an error message if they try to submit an empty text box or a single space
@@ -139,12 +196,34 @@ namespace finalSnowmanProject
                 hat.BringToFront();
                 hat.Visible = true;
                 MessageBox.Show("You lost! The word was " + answerWord + ".");
-                Close();
+                // add a button to the message box that will allow the user to play again
+                // if they click yes, will close this window and open a new one
+                // if they click no, will close the program
+                if (MessageBox.Show("Would you like to play again?", "Play Again?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    // restart the game
+                    restart();
+                }
+                else
+                {
+                    Close();
+                }
             }
             else if (!wordToDisplay.Contains('_'))
             {
                 MessageBox.Show("You won!");
-                Close();
+                // add a button to the message box that will allow the user to play again
+                // if they click yes, will close this window and open a new one
+                // if they click no, will close the program
+                if (MessageBox.Show("Would you like to play again?", "Play Again?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    // restart the game
+                    restart();
+                }
+                else
+                {
+                    Close();
+                }
             }
 
             // for each wrong guess a different part of the snowman will be displayed

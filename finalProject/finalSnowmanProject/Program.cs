@@ -16,9 +16,13 @@ namespace finalSnowmanProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            
             // set the resolution of the form
             Form1 form = new Form1();
             Application.Run(form);
+            
+            
+            
         }
     }
 }
