@@ -473,7 +473,7 @@ namespace finalSnowmanProject
             // hides word so that next game starts fresh and resets hint button
             label6.Visible = false;
             button28.Text = "Show Word (for debugging)";
-            
+
             // resets numWrongGuesses
             numWrongGuesses = 0;
             label1.Text = "Incorrect Guesses: " + numWrongGuesses;
@@ -536,16 +536,13 @@ namespace finalSnowmanProject
             button27.TabStop = true;
             button29.Enabled = true;
             button29.TabStop = true;
-            button30.Enabled = true;
-            button30.TabStop = true;
         }
-
         private void getRandomWord()
         {
             // Picks a random word from words and sets that as the
             // word the user needs to guess
             Random random = new Random();
-            randomWordChoice = words[random.Next(0, words.Count)];
+            randomWordChoice = words[random.Next(0, words.Count)].ToLower(); // user can only input lowercase so guarantee wordToGuess is in lowercase
             answerWord = randomWordChoice;
             // add spaces between each char and a space after the last char in randomWordChoice
             randomWordChoice = string.Join(" ", randomWordChoice.ToCharArray()) + " ";
